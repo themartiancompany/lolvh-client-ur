@@ -50,8 +50,8 @@ _hardhat="true"
 _py="python"
 _pkg=gl-dl
 pkgname="${_pkg}"
-pkgver="0.0.0.0.0.0.0.0.0.0.1"
-_commit="e727fc422b5aa1d8dc5fda60d9078dc81c2581c4"
+pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1"
+_commit="bc53a1d2c65ecfe79637351f1e6c83b232dd92af"
 pkgrel=1
 _pkgdesc=(
   "Downloads a resource from a GitLab instance"
@@ -95,8 +95,8 @@ _tarname="${pkgname}-${_tag}"
 if [[ "${_offline}" == "true" ]]; then
   _url="file://${HOME}/${pkgname}"
 fi
-_archive_sum='f4c028a9f7afe6e00a54053a49f1718aa2ed827a82f8c3af98203d1ed4e2a6a1'
-_archive_sig_sum="e5de38eaf599383800dd29a7b0e7f09b52b315410e9b555d8b1fd8417270c90b"
+_archive_sum="58363e00d60d5f15af7a47bb090de898337770bb23f8a1d4212e33914664b22e"
+_archive_sig_sum="6734efe41f1d2968d80854c94b0c67f79d8842a38dd153d39747ae3edb690ee3"
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
@@ -139,10 +139,12 @@ sha256sums=(
 )
 
 validpgpkeys=(
-  # Truocolo <truocolo@aol.com>
+  # Truocolo
+  #   <truocolo@aol.com>
   '97E989E6CF1D2C7F7A41FF9F95684DBE23D6A3E9'
   'DD6732B02E6C88E9E27E2E0D5FC6652B9D9A6C01'
-  # Pellegrino Prevete (dvorak) <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
+  # Pellegrino Prevete (dvorak)
+  #   <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
   '12D8E3D7888F741E89F86EE0FEC8567A644F1D16'
 )
 
@@ -161,6 +163,11 @@ package() {
     PREFIX="/usr" \
     DESTDIR="${pkgdir}" \
     install
+  install \
+    -Dm644 \
+    "COPYING" \
+    -t \
+    "${pkgdir}/usr/share/licenses/${pkgbase}-docs/"
 }
 
 # vim: ft=sh syn=sh et
