@@ -140,14 +140,12 @@ _gl_dl_mini() {
     _pkg="${2}" \
     _commit="${3}" \
     _url
-  _ns="themartiancompany"
-  _commit="2355d99325a85c677bf7b24f34f7b92c5c8b8f1b"
   _url="https://gitlab.com/${_ns}/${_pkg}/-/archive/${_commit}/${_pkg}-${_commit}.tar.gz"
-  _gl_dl_mini \
+  _gl_dl_retrieve \
     "${_url}"
 }
 
-_gl_dl_mini() {
+_gl_dl_retrieve() {
   local \
     _url="${1}" \
     _token_private \
@@ -189,7 +187,6 @@ readonly \
   ns="${3}" \
   pkg="${4}"
   commit="${5}"
-
 
 _requirements
 _build
