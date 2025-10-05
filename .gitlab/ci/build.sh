@@ -102,6 +102,10 @@ _requirements() {
   fur \
     "${_fur_opts[@]}" \
     "reallymakepkg"
+  _commit="$( \
+    recipe-get \
+      "/home/user/${_pkgname}/PKGBUILD" \
+      "_commit")"
   _gl_dl_mini \
     "${ns}" \
     "${_pkgname}" \
@@ -193,7 +197,6 @@ readonly \
   arch="${2}" \
   ns="${3}" \
   pkg="${4}"
-  commit="${5}"
 
 _requirements
 _build
