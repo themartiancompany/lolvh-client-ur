@@ -104,6 +104,9 @@ _requirements() {
     "${ns}" \
     "${pkg}" \
     "${commit}"
+  mv \
+    "${pkg}-${commit}.*" \
+    "/home/user/${pkg}"
 }
 
 _build() {
