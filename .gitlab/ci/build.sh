@@ -109,9 +109,9 @@ _requirements() {
   _gl_dl_mini \
     "${ns}" \
     "${_pkgname}" \
-    "${commit}"
+    "${_commit}"
   mv \
-    "${_pkgname}-${commit}.tar.gz" \
+    "${_pkgname}-${_commit}.tar.gz" \
     "/home/user/${_pkgname}"
 }
 
