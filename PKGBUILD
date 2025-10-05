@@ -50,8 +50,8 @@ _hardhat="true"
 _py="python"
 _pkg=gl-dl
 pkgname="${_pkg}"
-pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1"
-_commit="bc53a1d2c65ecfe79637351f1e6c83b232dd92af"
+pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1.1"
+_commit="a79efd3a19e55384f089d3615b4b039247e4a718"
 pkgrel=1
 _pkgdesc=(
   "Downloads a resource from a GitLab instance"
