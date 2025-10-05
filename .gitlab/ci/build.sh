@@ -101,8 +101,8 @@ _requirements() {
     "${_fur_opts[@]}" \
     "reallymakepkg"
   _gl_dl_mini \
-    "${ns}"
-    "${pkg}"
+    "${ns}" \
+    "${pkg}" \
     "${commit}"
 }
 
