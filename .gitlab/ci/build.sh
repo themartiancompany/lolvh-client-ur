@@ -105,7 +105,7 @@ _requirements() {
     "${pkg}" \
     "${commit}"
   mv \
-    "${pkg}-${commit}.*" \
+    "${pkg}-${commit}."* \
     "/home/user/${pkg}"
 }
 
