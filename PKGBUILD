@@ -39,12 +39,14 @@ if [[ ! -v "_evmfs" ]]; then
     _evmfs="false"
   fi
 fi
+if [[ ! -v "_git_http_host" ]]; then
+  _git_http_host="gitlab"
+fi
 _os="$( \
   uname \
     -o)"
 _offline="false"
 _git="false"
-_git_http_host="gitlab"
 if [[ "${_git_http_host}" == "github" ]]; then
   _archive_format="zip"
 elif [[ "${_git_http_host}" == "gitlab" ]]; then
@@ -66,7 +68,7 @@ pkgdesc="${_pkgdesc[*]}"
 arch=(
   'any'
 )
-_http="https://github.com"
+_http="https://${_git_http_host}.com"
 _ns="themartiancompany"
 url="${_http}/${_ns}/${pkgname}"
 license=(
@@ -138,7 +140,12 @@ elif [[ "${_evmfs}" == "false" ]]; then
       _src="${_tarname}.tar.gz::${_url}/archive/refs/tags/${_tag}.tar.gz"
       _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
     elif [[ "${_tag_name}" == "commit" ]]; then
-      _src="${_tarname}.${_archive_format}::${_url}/archive/${_commit}.${_archive_format}"
+      if [[ "${_git_http_host}" == "github" ]]; then
+        _uri="${_url}/archive/${_commit}.${_archive_format}"
+      elif [[ "${_git_http_host}" == "gitlab" ]]; then
+        _uri="${_url}/-/archive/${_commit}/${_tarname}.${_archive_format}"
+      fi
+      _src="${_tarname}.${_archive_format}::${_uri}"
       _sum="${_archive_sum}"
     fi
   fi
