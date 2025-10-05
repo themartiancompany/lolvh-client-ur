@@ -78,7 +78,9 @@ _fur_mini() {
 _requirements() {
   local \
     _fur_mini_opts=() \
-    _fur_opts=()
+    _fur_opts=() \
+    _pkgname
+  _pkgname="${pkg%-ur}"
   _fur_mini_opts+=(
     "${platform}"
   )
@@ -102,22 +104,24 @@ _requirements() {
     "reallymakepkg"
   _gl_dl_mini \
     "${ns}" \
-    "${pkg}" \
+    "${_pkgname}" \
     "${commit}"
   mv \
-    "${pkg}-${commit}.tar.gz" \
-    "/home/user/${pkg}"
+    "${_pkgname}-${commit}.tar.gz" \
+    "/home/user/${_pkgname}"
 }
 
 _build() {
   local \
     _reallymakepkg_opts=() \
     _makepkg_opts=() \
-    _cmd=()
+    _cmd=() \
+    _pkgname
+  _pkgname="${pkg%-ur}"
   _reallymakepkg_opts+=(
     -v
     -w
-      "'${HOME}/gl-dl-build'"
+      "'${HOME}/${_pkgname}-build'"
   )
   _makepkg_opts+=(
     -df
@@ -125,7 +129,7 @@ _build() {
   )
   _cmd+=(
     "cd"
-      "/home/user/gl-dl" "&&"
+      "/home/user/${_pkgname}" "&&"
     "reallymakepkg"
       "${_reallymakepkg_opts[@]}"
       "--"
