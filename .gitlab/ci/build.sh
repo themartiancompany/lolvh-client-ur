@@ -170,11 +170,14 @@ _gl_dl_mini() {
     cat \
       "${_token_private}")"
   _curl_opts+=(
+    -v
     --header
       "${_token}"
     -o 
       "${_output_file}"
   )
+  echo \
+    "${_url_opts[@]}"
   curl \
     "${_curl_opts[@]}" \
     "${_url}"
