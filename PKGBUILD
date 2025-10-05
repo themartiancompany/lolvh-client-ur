@@ -45,6 +45,12 @@ _os="$( \
     -o)"
 _offline="false"
 _git="false"
+_git_http_host="gitlab"
+if [[ "${_git_http_host}" == "github" ]]; then
+  _archive_format="zip"
+elif [[ "${_git_http_host}" == "gitlab" ]]; then
+  _archive_format="tar.gz"
+fi
 _solc="true"
 _hardhat="true"
 _py="python"
@@ -128,7 +134,7 @@ elif [[ "${_evmfs}" == "false" ]]; then
       _src="${_tarname}.tar.gz::${_url}/archive/refs/tags/${_tag}.tar.gz"
       _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
     elif [[ "${_tag_name}" == "commit" ]]; then
-      _src="${_tarname}.zip::${_url}/archive/${_commit}.zip"
+      _src="${_tarname}.${_archive_format}::${_url}/archive/${_commit}.${_archive_format}"
       _sum="${_archive_sum}"
     fi
   fi
