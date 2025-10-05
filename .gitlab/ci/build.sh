@@ -100,8 +100,10 @@ _requirements() {
   fur \
     "${_fur_opts[@]}" \
     "reallymakepkg"
-  _gl_dl_mini_test
-
+  _gl_dl_mini \
+    "${ns}"
+    "${pkg}"
+    "${commit}"
 }
 
 _build() {
@@ -132,7 +134,7 @@ _build() {
     "user"
 }
 
-_gl_dl_mini_test() {
+_gl_dl_mini() {
   local \
     _ns="${1}" \
     _pkg="${2}" \
@@ -182,9 +184,8 @@ readonly \
   platform="${1}" \
   arch="${2}" \
   ns="${3}" \
-  commit="${4}"
-  _ns="themartiancompany"
-  _commit="2355d99325a85c677bf7b24f34f7b92c5c8b8f1b"
+  pkg="${4}"
+  commit="${5}"
 
 
 _requirements
