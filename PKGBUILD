@@ -23,7 +23,6 @@
 #   Truocolo
 #     <truocolo@aol.com>
 #     <truocolo@0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b>
-# Maintainer:
 #   Pellegrino Prevete (dvorak)
 #     <pellegrinoprevete@gmail.com>
 #     <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
@@ -74,8 +73,11 @@ license=(
   'AGPL3'
 )
 depends=(
+  "awk"
   "curl"
   "libcrash-bash"
+  "git"
+  "grep"
 )
 optdepends=()
 if [[ "${_os}" != "GNU/Linux" ]] && \
