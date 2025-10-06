@@ -120,7 +120,7 @@ stages:
   stage: build
   artifacts:
     paths:
-      - /home/user/${_pkgname}/*.pkg.tar.*
+      - /home/user/${CI_PROJECT_NAME%-ur}/*.pkg.tar.*
   # tags:
   #   - vm
 
