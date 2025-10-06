@@ -155,6 +155,7 @@ _build() {
         basename \
           "${_file}")"
   done
+  ls
   gl-dl \
     -v \
     -h
