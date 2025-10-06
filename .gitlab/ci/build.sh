@@ -143,6 +143,13 @@ _build() {
     -c \
     "${_cmd[*]}" - \
     "user"
+  pacman \
+    -U \
+    --noconfirm \
+    "/home/user/${_pkgname}/"*".pkg.tar."*
+  gl-dl \
+    -v \
+    -h
 }
 
 _gl_dl_mini() {
