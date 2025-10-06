@@ -151,7 +151,9 @@ _build() {
     in "/home/user/${_pkgname}/"*".pkg.tar."*; do
     mv \
       "${_file}" \
-      "/home/user/${_pkgname}/dogeos-gnu-${_file}"
+      "/home/user/${_pkgname}/dogeos-gnu-$( \
+        basename \
+          "${_file}")"
   done
   gl-dl \
     -v \
