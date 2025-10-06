@@ -118,6 +118,9 @@ stages:
   script:
     - ./.gitlab/ci/build.sh ${BUILD_SCRIPT_ARGS}
   stage: build
+  artifacts:
+    paths:
+      - /home/user/${_pkgname}/*.pkg.tar.*
   # tags:
   #   - vm
 
