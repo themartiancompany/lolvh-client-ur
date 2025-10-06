@@ -110,6 +110,8 @@ _requirements() {
     "${ns}" \
     "${_pkgname}" \
     "${_commit}"
+  pwd
+  ls
   mv \
     "${_pkgname}-${_commit}.tar.gz" \
     "/home/user/${_pkgname}"
