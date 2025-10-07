@@ -124,24 +124,7 @@ stages:
   # tags:
   #   - vm
 
-build_short:
-  extends: .build
-  parallel:
-    matrix:
-      - BUILD_SCRIPT_ARGS: arch x86_64 ${CI_PROJECT_NAMESPACE} ${CI_PROJECT_NAME} ${CI_COMMIT_SHA}
-  only:
-    refs:
-      - master
-      - merge_requests
-    changes:
-      - PKGBUILD
-      - README.md
-      - COPYING
-      - .gitlab-ci.yml
-      - .gitlab/ci/*
-  interruptible: true
-
-build_long:
+build:
   extends: .build
   parallel:
     matrix:
