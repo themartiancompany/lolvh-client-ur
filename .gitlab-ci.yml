@@ -98,7 +98,9 @@ stages:
         "${GL_DL_PRIVATE_TOKEN}" > \
         "/root/.config/gitlab.com/default.txt"
       echo \
-        "${BUR_GPG_KEY}" > \
+        "${BUR_GPG_KEY}" | \
+        base64 \
+          -d > \
         "/root/bur.asc"
       gpg \
         --import \
