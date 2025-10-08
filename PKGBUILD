@@ -58,7 +58,7 @@ _py="python"
 _pkg=gl-dl
 pkgname="${_pkg}"
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1"
-_commit="edada47bf85758700cb3962c8920442faf40ac64"
+_commit="9a60ee828f9a741fe0c829ca527bd83ab06d3ecb"
 pkgrel=1
 _pkgdesc=(
   "Downloads a resource from a GitLab instance"
@@ -105,8 +105,8 @@ _tarname="${pkgname}-${_tag}"
 if [[ "${_offline}" == "true" ]]; then
   _url="file://${HOME}/${pkgname}"
 fi
-_archive_sum="a34c6c08f10c7f18ec1dae50f341068957e7e129cde21a58b15d1342397bea2c"
-_archive_sig_sum="6392e6dd6546273df2215a39de09f0617e71597bffa52ef8341d12ff61fe6fe2"
+_archive_sum="c8b243d977bd39ef3350a06ce953ddddd4c023d4a6b8ff961362a81c2ae7a3b2"
+_archive_sig_sum="6a4f0c63d04896489e10e405c492e81eb09a013bbdf788d906b38e9c3bad1e41"
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
