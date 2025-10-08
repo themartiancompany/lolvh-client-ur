@@ -198,7 +198,8 @@ _gl_dl_retrieve() {
     cat \
       "${_token_private}")"
   _curl_opts+=(
-    -v
+    --silent
+    --location
     --header
       "${_token}"
     -o 
