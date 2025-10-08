@@ -144,7 +144,7 @@ _build() {
     "${_cmd[*]}" - \
     "user"
   pacman \
-    -U \
+    -Udd \
     --noconfirm \
     "/home/user/${_pkgname}/"*".pkg.tar."*
   for _file \
@@ -162,10 +162,6 @@ _build() {
       --detach-sign \
       "${_file}"
   done
-  ls
-  gl-dl \
-    -v \
-    -h
 }
 
 _gl_dl_mini() {
