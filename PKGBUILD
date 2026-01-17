@@ -59,7 +59,7 @@ _pkg=gl-dl
 pkgname="${_pkg}"
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1.1"
 _commit="e946436f91efe6cd0b151fa8d20ef83e66dc1952"
-pkgrel=4
+pkgrel=5
 _pkgdesc=(
   "Downloads a resource from a GitLab instance"
   "using an authentication token if present."
