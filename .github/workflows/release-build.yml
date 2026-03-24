@@ -903,7 +903,7 @@ jobs:
               -df \
               --nocheck \
               --skippgpcheck
-          /entrypointsh \
+          /entrypoint.sh \
             ls
           /entrypoint.sh \
             echo \
