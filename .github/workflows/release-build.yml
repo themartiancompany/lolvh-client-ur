@@ -864,8 +864,8 @@ jobs:
       - name:
           Builds the Android package.
         run: |
-          export \
-            PKGEXT=".pkg.tar.xz"
+          # export \
+          #   PKGEXT=".pkg.tar.xz"
           export \
             _pkgbase="$( \
               /entrypoint.sh \
@@ -908,11 +908,12 @@ jobs:
           /entrypoint.sh \
             echo \
               "Home: ${HOME}"
-          find \
-            "${PWD}" \
-            -iname \
-              "*.pkg.tar.*" || \
-            true
+          /entrypoint.sh \
+            find \
+              "${PWD}" \
+              -iname \
+                "*.pkg.tar.*" || \
+              true
       # - name:
       #     Installs the package.
       #   run: |
