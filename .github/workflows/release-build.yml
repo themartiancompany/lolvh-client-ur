@@ -903,6 +903,8 @@ jobs:
               -df \
               --nocheck \
               --skippgpcheck
+          /entrypointsh \
+            ls
           /entrypoint.sh \
             echo \
               "Home: ${HOME}"
