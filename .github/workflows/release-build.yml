@@ -883,6 +883,7 @@ jobs:
             _arch="arm"; \
           fi && \
           /entrypoint.sh \
+            PKGEXT='.pkg.tar.xz' \
             _evmfs="false" \
             arch="${_arch}" \
             TERMUX_VERSION=50 \
@@ -1627,7 +1628,7 @@ jobs:
                 "pkgbase")"
           su \
             -c \
-              "cd ${PWD} && _evmfs="false" _git_service="github" reallymakepkg -v -u -w '/home/user/${_pkgbase}-build' -- -df --nocheck --skippgpcheck" - \
+              "cd ${PWD} && PKGEXT='.pkg.tar.xz' _evmfs="false" _git_service="github" reallymakepkg -v -u -w '/home/user/${_pkgbase}-build' -- -df --nocheck --skippgpcheck && ls" - \
             "user"
       # - name:
       #     Installs the package.
