@@ -83,7 +83,7 @@ _pkg=gl-dl
 pkgname="${_pkg}"
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1.1"
 _commit="e946436f91efe6cd0b151fa8d20ef83e66dc1952"
-pkgrel=11
+pkgrel=12
 _pkgdesc=(
   "Downloads a resource from a GitLab instance"
   "using an authentication token if present."
@@ -141,8 +141,8 @@ if [[ "${_offline}" == "true" ]]; then
 fi
 _gitlab_sum="ab493bc530fd1f7732b238c8c4cf17b3746ead83428a2489829f4d7152c53b8d"
 _gitlab_sig_sum="55999629d7544bf9bb71e129842a0c3537f1c7a7d088c37402c735cbf0758ff5"
-_github_sum="ab493bc530fd1f7732b238c8c4cf17b3746ead83428a2489829f4d7152c53b8d"
-_github_sig_sum="55999629d7544bf9bb71e129842a0c3537f1c7a7d088c37402c735cbf0758ff5"
+_github_sum="32e7836431c35f886ecf483409b449a9f8b109280fc216ca1e0d74fd72604c8d"
+_github_sig_sum="cb0d917d94d6c556e74433b5e985948ec4cf5954ef7f8cf6d3e8fc6c207457d9"
 if [[ "${_git_service}" == "gitlab" ]]; then
   _sum="${_gitlab_sum}"
   _sig_sum="${_gitlab_sig_sum}"
