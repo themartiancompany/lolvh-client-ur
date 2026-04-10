@@ -977,9 +977,9 @@ jobs:
             ${{ github.event.release.upload_url }}
             # ${{ steps.create_release.outputs.upload_url }}
           asset_path:
-            "gl-dl-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "lolvh-client-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_name:
-            "dogeos-android-gl-dl-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "dogeos-android-lolvh-client-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_content_type:
             application/gzip
   arch_release:
@@ -1693,9 +1693,9 @@ jobs:
             ${{ github.event.release.upload_url }}
             # ${{ steps.create_release.outputs.upload_url }}
           asset_path:
-            "gl-dl-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "lolvh-client-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_name:
-            "dogeos-gnu-gl-dl-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "dogeos-gnu-lolvh-client-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_content_type:
             application/gzip
   msys2_release:
@@ -2144,9 +2144,9 @@ jobs:
             ${{ github.event.release.upload_url }}
             # ${{ steps.create_release.outputs.upload_url }}
           asset_path:
-            "gl-dl-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "lolvh-client-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_name:
-            "dogeos-windows-gl-dl-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
+            "dogeos-windows-lolvh-client-${{ steps.version.outputs.version }}-any.pkg.tar.xz"
           asset_content_type:
             application/gzip
 
