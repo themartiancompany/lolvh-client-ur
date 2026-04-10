@@ -153,10 +153,10 @@ _tarname="${pkgname}-${_tag}"
 if [[ "${_offline}" == "true" ]]; then
   _url="file://${HOME}/${pkgname}"
 fi
-_gitlab_sum=""
-_gitlab_sig_sum=""
-_github_sum=""
-_github_sig_sum=""
+_gitlab_sum="6fe8605b8636fefb88d441c44e9a56db0b7b079d4bb4f3b9cf3da61233ac4049"
+_gitlab_sig_sum="45b4c4d93a8e3014e6b6f4c3454d69e452799fae8622f5e049be49bf2d2f632a"
+_github_sum="cac56f78ecf5719e113fe901ab4c481ad0c8dd4f47343641e393fda39cc78b66"
+_github_sig_sum="d2368b7d20c785969afdafaeac0779a82462c5a1f5f5eec2952e52fa1b3be000"
 if [[ "${_git_service}" == "gitlab" ]]; then
   _sum="${_gitlab_sum}"
   _sig_sum="${_gitlab_sig_sum}"
