@@ -89,14 +89,17 @@ fi
 _solc="true"
 _hardhat="true"
 _py="python"
-_pkg=gl-dl
-pkgname="${_pkg}"
-pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1.1.1"
-_commit="e946436f91efe6cd0b151fa8d20ef83e66dc1952"
-pkgrel=20
+_pkg=lolvh-client
+pkgbase="${_pkg}"
+pkgname=(
+  "${pkgbase}"
+)
+pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1"
+_commit="8bb75f3ff6b2de72d703e3768366cf51ab66900e"
+pkgrel=1
 _pkgdesc=(
-  "Downloads a resource from a GitLab instance"
-  "using an authentication token if present."
+  "Simple OVHCloud DNS client using"
+  "the Python OVH module."
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
@@ -109,11 +112,12 @@ license=(
   'AGPL3'
 )
 depends=(
-  "awk"
-  "curl"
   "libcrash-bash"
-  "git"
-  "grep"
+  "${_py}"
+  "${_py}-ovh"
+)
+provides=(
+  "${_py}-${_pkg}=${pkgver}"
 )
 optdepends=()
 if [[ "${_os}" != "GNU/Linux" ]] && \
@@ -149,10 +153,10 @@ _tarname="${pkgname}-${_tag}"
 if [[ "${_offline}" == "true" ]]; then
   _url="file://${HOME}/${pkgname}"
 fi
-_gitlab_sum="ab493bc530fd1f7732b238c8c4cf17b3746ead83428a2489829f4d7152c53b8d"
-_gitlab_sig_sum="55999629d7544bf9bb71e129842a0c3537f1c7a7d088c37402c735cbf0758ff5"
-_github_sum="32e7836431c35f886ecf483409b449a9f8b109280fc216ca1e0d74fd72604c8d"
-_github_sig_sum="cb0d917d94d6c556e74433b5e985948ec4cf5954ef7f8cf6d3e8fc6c207457d9"
+_gitlab_sum=""
+_gitlab_sig_sum=""
+_github_sum=""
+_github_sig_sum=""
 if [[ "${_git_service}" == "gitlab" ]]; then
   _sum="${_gitlab_sum}"
   _sig_sum="${_gitlab_sig_sum}"
@@ -162,6 +166,7 @@ elif [[ "${_git_service}" == "github" ]]; then
 fi
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
+# Dvorak
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
 _evmfs_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_sum}"
 _evmfs_src="${_tarname}.tar.gz::${_evmfs_uri}"
@@ -190,7 +195,7 @@ elif [[ "${_evmfs}" == "false" ]]; then
   elif [[ "${_git}" == false ]]; then
     if [[ "${_tag_name}" == 'pkgver' ]]; then
       _src="${_tarname}.tar.gz::${_url}/archive/refs/tags/${_tag}.tar.gz"
-      _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
+      _sum="SKIP"
     elif [[ "${_tag_name}" == "commit" ]]; then
       if [[ "${_git_http_host}" == "github" ]]; then
         _uri="${_url}/archive/${_commit}.${_archive_format}"
